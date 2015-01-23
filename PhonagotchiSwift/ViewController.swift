@@ -33,14 +33,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func handleBananaPan(recognizer:UIPanGestureRecognizer) {
+        
         //move banana with finger 1. Get new location 2. Update view to new location 3. Reset to zero for new move
         let newLocation = recognizer.translationInView(self.view) //1.
         recognizer.view!.center = CGPoint(x:recognizer.view!.center.x + newLocation.x, //2.
             y:recognizer.view!.center.y + newLocation.y)
         recognizer.setTranslation(CGPointZero, inView: self.view) //3.
+        
+        // If Pan has ended banana Falls down
         if recognizer.state == .Ended {
             println("banana pan has ended")
             animateBananaFallsDown()
+        }
+        
+        // If Banana is within monkey frame, let monkey eat banana
+        var bananaPosition = recognizer.view!.center
+        if monkeyImageView.frame.contains(bananaPosition){
+            animateEatBanana(recognizer.view!)
         }
     }
 
@@ -93,15 +102,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-//    @IBAction func handleBananaPan(recognizer: UIGestureRecognizer) {
-////        if pinchRecognized == true {
-//            //move banana with finger 1. Get new location 2. Update view to new location 3. Reset to zero for new move
-//            let newLocation = recognizer.translationInView(self.view) //1.
-//            recognizer.view!.center = CGPoint(x:recognizer.view!.center.x + newLocation.x, //2.
-//                y:recognizer.view!.center.y + newLocation.y)
-//            recognizer.setTranslation(CGPointZero, inView: self.view) //3.
-//        }
-//    }
     
     
     
@@ -113,7 +113,25 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             return true
     }
     
+    
     //MARK: Animation Blocks
+    
+    func animateEatBanana(view: UIView) {
+        UIView.animateWithDuration(1.0,
+            delay: 0.4,
+            options: nil,
+            animations: {
+                view.alpha = 0.0
+                let scaleTrans = CGAffineTransformMakeScale(0.01, 0.01)
+                let angle = CGFloat(180 * M_PI / 180)
+                let rotateTrans = CGAffineTransformMakeRotation(angle)
+                view.transform = CGAffineTransformConcat(scaleTrans, rotateTrans)
+            },
+            completion: { finished in
+                //                self.animatefirstBananaReappears()
+        })
+    }
+    
     
     func animateSecondBananaAppears() {
         UIView.animateWithDuration(0.2,
