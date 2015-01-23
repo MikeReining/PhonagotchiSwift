@@ -40,9 +40,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             y:recognizer.view!.center.y + newLocation.y)
         recognizer.setTranslation(CGPointZero, inView: self.view) //3.
         
-        // If Pan has ended banana Falls down
-        if recognizer.state == .Ended {
-            println("banana pan has ended")
+        // If Pan has ended & banana frame is not within monkey frame
+        if recognizer.state == .Ended && !monkeyImageView.frame.contains(recognizer.view!.frame) {
             animateBananaFallsDown(recognizer.view!)
         }
         
