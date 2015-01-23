@@ -37,7 +37,7 @@
                                 </constraints>
                             </imageView>
                             <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bananas" translatesAutoresizingMaskIntoConstraints="NO" id="8yb-Q0-l4o">
-                                <rect key="frame" x="434" y="430" width="150" height="150"/>
+                                <rect key="frame" x="383" y="417" width="150" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="PQ7-e4-tds"/>
@@ -52,11 +52,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Rwz-a4-D2c" secondAttribute="centerX" id="7HN-zM-6sp"/>
-                            <constraint firstItem="8yb-Q0-l4o" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GmG-vy-fvW"/>
+                            <constraint firstItem="8yb-Q0-l4o" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-51" id="GmG-vy-fvW"/>
                             <constraint firstItem="eeX-AM-6CS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RZ1-Xp-bjL"/>
                             <constraint firstItem="Rwz-a4-D2c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="UJT-db-P6X"/>
                             <constraint firstAttribute="centerY" secondItem="Rwz-a4-D2c" secondAttribute="centerY" id="h2C-rR-8hs"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8yb-Q0-l4o" secondAttribute="bottom" constant="20" id="iXL-Ge-Zho"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8yb-Q0-l4o" secondAttribute="bottom" constant="33" id="iXL-Ge-Zho"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eeX-AM-6CS" secondAttribute="bottom" constant="20" id="wdo-0g-jZi"/>
                         </constraints>
                         <variation key="default">
@@ -67,6 +67,7 @@
                     </view>
                     <connections>
                         <outlet property="bananaImageView" destination="8yb-Q0-l4o" id="4Dt-0I-QjS"/>
+                        <outlet property="bananaImageView2" destination="eeX-AM-6CS" id="UBU-rC-oNZ"/>
                         <outlet property="monkeyImageView" destination="Rwz-a4-D2c" id="aSY-I4-R6H"/>
                     </connections>
                 </viewController>

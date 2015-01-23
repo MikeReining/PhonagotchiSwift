@@ -38,6 +38,7 @@
 		27A85FE71A719ED90030DEAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27A85FE81A719ED90030DEAE /* PhonagotchiSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhonagotchiSwiftTests.swift; sourceTree = "<group>"; };
 		27E33B991A71A1FB0000E6A9 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		27E33B9B1A7205690000E6A9 /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +84,7 @@
 				27A85FD41A719ED90030DEAE /* ViewController.swift */,
 				27E33B991A71A1FB0000E6A9 /* Pet.swift */,
 				27A85FD61A719ED90030DEAE /* Main.storyboard */,
+				27E33B9B1A7205690000E6A9 /* ScratchPad.playground */,
 				27A85FD91A719ED90030DEAE /* Images.xcassets */,
 				27A85FDB1A719ED90030DEAE /* LaunchScreen.xib */,
 				27A85FD01A719ED90030DEAE /* Supporting Files */,

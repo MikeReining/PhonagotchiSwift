@@ -10,16 +10,19 @@ import UIKit
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
+    @IBOutlet weak var bananaImageView2: UIImageView!
     @IBOutlet weak var monkeyImageView: UIImageView!
-    var monkey: Pet?
-    
     @IBOutlet weak var bananaImageView: UIImageView!
+    
     var lastPosition:CGPoint?
     var pinchRecognized: Bool = false
+    var monkey: Pet?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         monkey = Pet()
+        bananaImageView2.alpha = 0.0
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -30,7 +33,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func handleBananaPan(recognizer:UIPanGestureRecognizer) {
-        
         //move banana with finger 1. Get new location 2. Update view to new location 3. Reset to zero for new move
         let newLocation = recognizer.translationInView(self.view) //1.
         recognizer.view!.center = CGPoint(x:recognizer.view!.center.x + newLocation.x, //2.
@@ -78,6 +80,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func handlePinch(recognizer : UIPinchGestureRecognizer) {
         println("pinch recognized")
+        animateSecondBananaAppears()
+        
         pinchRecognized = true
         if recognizer.state == .Ended {
             println("pinch has ended")
@@ -106,4 +110,19 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             return true
     }
     
+    //MARK: Animation Blocks
+    
+    func animateSecondBananaAppears() {
+        UIView.animateWithDuration(0.2,
+            delay: 0.4,
+            options: .CurveEaseInOut,
+            animations: {
+                self.bananaImageView2.alpha = 1.0
+            },
+            completion: { finished in
+                println("Second Banana is here!")
+                
+        })
+    
+    }
 }
