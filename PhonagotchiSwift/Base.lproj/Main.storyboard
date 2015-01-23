@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhonagotchiSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monkey" translatesAutoresizingMaskIntoConstraints="NO" id="Rwz-a4-D2c">
+                                <rect key="frame" x="225" y="70" width="150" height="150"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Moc-af-eyI"/>
+                                    <constraint firstAttribute="width" constant="150" id="Xr2-QB-wgx"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Lsu-Tr-gyG" appends="YES" id="mpH-4i-8wE"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bananas" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-AM-6CS">
+                                <rect key="frame" x="434" y="430" width="150" height="150"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="IIN-T2-1H4"/>
+                                    <constraint firstAttribute="height" constant="150" id="bYe-l8-aq8"/>
+                                </constraints>
+                            </imageView>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bananas" translatesAutoresizingMaskIntoConstraints="NO" id="8yb-Q0-l4o">
+                                <rect key="frame" x="434" y="430" width="150" height="150"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="PQ7-e4-tds"/>
+                                    <constraint firstAttribute="height" constant="150" id="f0Z-M6-2wG"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="A2c-dY-Ubc" appends="YES" id="Tk0-xt-2zq"/>
+                                    <outletCollection property="gestureRecognizers" destination="8wS-cd-Agt" appends="YES" id="3Ad-jY-Rwg"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Rwz-a4-D2c" secondAttribute="centerX" id="7HN-zM-6sp"/>
+                            <constraint firstItem="8yb-Q0-l4o" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GmG-vy-fvW"/>
+                            <constraint firstItem="eeX-AM-6CS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RZ1-Xp-bjL"/>
+                            <constraint firstItem="Rwz-a4-D2c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="UJT-db-P6X"/>
+                            <constraint firstAttribute="centerY" secondItem="Rwz-a4-D2c" secondAttribute="centerY" id="h2C-rR-8hs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8yb-Q0-l4o" secondAttribute="bottom" constant="20" id="iXL-Ge-Zho"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eeX-AM-6CS" secondAttribute="bottom" constant="20" id="wdo-0g-jZi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="h2C-rR-8hs"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="bananaImageView" destination="8yb-Q0-l4o" id="4Dt-0I-QjS"/>
+                        <outlet property="monkeyImageView" destination="Rwz-a4-D2c" id="aSY-I4-R6H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Lsu-Tr-gyG">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="tU9-VM-Z4R"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="8wS-cd-Agt">
+                    <connections>
+                        <action selector="handlePinch:" destination="BYZ-38-t0r" id="gB0-0y-ebf"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="A2c-dY-Ubc">
+                    <connections>
+                        <action selector="handleBananaPan:" destination="BYZ-38-t0r" id="jTL-Sp-GKm"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bananas" width="200" height="200"/>
+        <image name="monkey" width="320" height="320"/>
+    </resources>
+</document>
