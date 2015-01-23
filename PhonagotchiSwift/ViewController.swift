@@ -38,6 +38,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         recognizer.view!.center = CGPoint(x:recognizer.view!.center.x + newLocation.x, //2.
             y:recognizer.view!.center.y + newLocation.y)
         recognizer.setTranslation(CGPointZero, inView: self.view) //3.
+        if recognizer.state == .Ended {
+            println("banana pan has ended")
+            animateBananaFallsDown()
+        }
     }
 
     
@@ -102,7 +106,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        println("touch has ended")
     }
     
     func gestureRecognizer(UIGestureRecognizer,
@@ -121,8 +124,21 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             },
             completion: { finished in
                 println("Second Banana is here!")
-                
         })
+    }
     
+    func animateBananaFallsDown() {
+        UIView.animateWithDuration(1.0,
+            delay: 0.4,
+            options: .CurveEaseIn,
+            animations: {
+                let angle = CGFloat(90 * M_PI / 180)
+                self.bananaImageView.center = CGPoint(x: 150, y: 800)
+                self.bananaImageView.transform = CGAffineTransformMakeRotation(angle)
+                self.bananaImageView2.alpha = 1.0
+            },
+            completion: { finished in
+                println("Banana is falling!")
+        })
     }
 }
