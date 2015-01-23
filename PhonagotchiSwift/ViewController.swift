@@ -43,13 +43,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // If Pan has ended banana Falls down
         if recognizer.state == .Ended {
             println("banana pan has ended")
-            animateBananaFallsDown()
+            animateBananaFallsDown(recognizer.view!)
         }
         
         // If Banana is within monkey frame, let monkey eat banana
         var bananaPosition = recognizer.view!.center
         if monkeyImageView.frame.contains(bananaPosition){
             animateEatBanana(recognizer.view!)
+            
         }
     }
 
@@ -117,7 +118,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     //MARK: Animation Blocks
     
     func animateEatBanana(view: UIView) {
-        UIView.animateWithDuration(1.0,
+        UIView.animateWithDuration(0.5,
             delay: 0.4,
             options: nil,
             animations: {
@@ -145,15 +146,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         })
     }
     
-    func animateBananaFallsDown() {
+    func animateBananaFallsDown(view: UIView) {
         UIView.animateWithDuration(1.0,
             delay: 0.4,
             options: .CurveEaseIn,
             animations: {
                 let angle = CGFloat(90 * M_PI / 180)
-                self.bananaImageView.center = CGPoint(x: 150, y: 800)
-                self.bananaImageView.transform = CGAffineTransformMakeRotation(angle)
-                self.bananaImageView2.alpha = 1.0
+                view.center = CGPoint(x: 150, y: 800)
+                view.transform = CGAffineTransformMakeRotation(angle)
+                view.alpha = 1.0
             },
             completion: { finished in
                 println("Banana is falling!")

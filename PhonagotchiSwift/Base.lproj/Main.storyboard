@@ -28,13 +28,16 @@
                                     <outletCollection property="gestureRecognizers" destination="Lsu-Tr-gyG" appends="YES" id="mpH-4i-8wE"/>
                                 </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bananas" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-AM-6CS">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bananas" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-AM-6CS">
                                 <rect key="frame" x="434" y="430" width="150" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="IIN-T2-1H4"/>
                                     <constraint firstAttribute="height" constant="150" id="bYe-l8-aq8"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5H4-fN-uJ3" appends="YES" id="Chf-Zp-0El"/>
+                                </connections>
                             </imageView>
                             <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bananas" translatesAutoresizingMaskIntoConstraints="NO" id="8yb-Q0-l4o">
                                 <rect key="frame" x="383" y="417" width="150" height="150"/>
@@ -85,6 +88,11 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="A2c-dY-Ubc">
                     <connections>
                         <action selector="handleBananaPan:" destination="BYZ-38-t0r" id="jTL-Sp-GKm"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="5H4-fN-uJ3">
+                    <connections>
+                        <action selector="handleBananaPan:" destination="BYZ-38-t0r" id="g3X-dT-a8b"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
